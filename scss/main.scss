@@ -1,0 +1,364 @@
+@import 'variables';
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Epilogue', sans-serif;
+    overflow: hidden;
+    background-color: rgb(255, 248, 248);
+
+
+    h1 {
+        color: $color-black;
+        font-size: 36px;
+    }
+
+    p {
+        color: $color-gray;
+        font-size: 18px;
+    }
+
+    li {
+        list-style: none;
+    }
+
+    a {
+        text-decoration: none;
+        color: $color-gray;
+
+        &:hover {
+            color: $color-black;
+        }
+    }
+}
+
+
+
+nav {
+    display: flex;
+    align-items: center;
+    margin: 1rem;
+    gap: 2rem;
+
+    .nav-bar {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex: 1;
+
+        &.toggle{
+            right: 0;
+        }
+    
+        
+
+
+
+
+        .logo {
+            margin-right: 3rem;
+        }
+
+        .links {
+
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+
+
+
+            li {
+                position: relative;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                img {
+                    margin-left: 5px;
+                }
+
+                &:hover ul {
+                    display: block;
+                }
+
+                ul {
+                    background-color: #fff;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    padding: 1.2rem;
+                    position: absolute;
+                    top: 60px;
+                    right: 0;
+                    border-radius: 8px;
+                    display: none;
+
+                    li {
+                        padding: .5rem;
+
+                    }
+
+
+                    li a {
+                        display: flex;
+                        gap: 1rem;
+
+                    }
+                }
+
+
+
+                a {
+                    &:hover {
+                        color: $color-black;
+
+                    }
+
+
+                }
+            }
+        }
+
+
+
+        .login-container {
+            margin-left: auto;
+
+
+            ul {
+                display: flex;
+                gap: 2rem;
+
+                li {
+                    .btn {
+                        padding: .6rem 1rem;
+                    }
+
+                    .active {
+                        border: 1px solid black;
+                        border-radius: 14px;
+                    }
+                }
+
+            }
+        }
+
+
+
+    }
+
+    .close{
+        display: none;
+        border: 0;
+        background-color: transparent;
+        padding: 1rem;
+    }
+
+    .hamburger {
+        margin-left: auto;
+        display: none;
+
+        button {
+            border: 0;
+            background-color: transparent;
+            cursor: pointer;
+            
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+// header
+
+.container-grid {
+    display: grid;
+    height: calc(100vh - 95px);
+    padding: 2rem 4rem;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+        'banner image-box'
+        'footer image-box';
+
+    .banner {
+        grid-area: banner;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 5rem 2rem;
+
+
+
+        h1 {
+            font-size: 4.7rem;
+            font-weight: 700;
+            line-height: .9;
+            margin-bottom: 2rem;
+        }
+
+        p {
+            color: $color-gray;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .btn-banner {
+            margin-top: 2rem;
+            width: 160px;
+            height: 55px;
+            background-color: $color-black;
+            color: $color-white;
+            font-size: 18px;
+            letter-spacing: 1.1px;
+            border-radius: 8px;
+            font-weight: 700;
+            border: 0;
+            cursor: pointer;
+        }
+
+
+
+    }
+
+    .image-box {
+        grid-area: image-box;
+        background-image: url(/images/image-hero-desktop.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        width: 100%;
+        height: 100&;
+
+    }
+}
+
+.footer {
+    grid-area: footer;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+
+@media (max-width: 700px) {
+
+nav{
+
+    .nav-bar{
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 50%;
+    height: 100vh;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: all .7s;
+
+    .links{
+        display: block;
+
+        li{
+            justify-content: flex-start;
+            padding-left: 1rem;
+
+
+            ul{
+                right: 100px;
+                top: 0;
+                margin: 0;;
+                padding: 1rem;
+            }
+        }
+
+
+
+
+    }
+
+    .close{
+        display: block;
+        margin-left: auto;
+    }
+     
+
+
+        .login-container{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 1rem;
+            ul{
+                flex-direction: column;
+                justify-content: center;
+                
+              
+                li{
+                    width: 100%;
+               
+                }
+            }
+        }
+    }
+
+    .hamburger{
+        display: block;
+    }
+}
+
+    .container-grid {
+      grid-template-columns: 1fr;
+      padding: 0;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 1rem;
+      grid-template-areas:
+        'image-box'
+        'banner'
+        'footer';
+
+        .banner{
+            padding: 0;
+            margin: 0;
+            .content{
+                text-align: center;
+
+                h1{
+                    font-size: 40px;
+                    margin-bottom:1rem ;
+                }
+            }
+        }
+
+        .image-box{
+            background-image:url(/images/image-hero-mobile.png)
+        }
+
+        .footer{
+            gap: 0;
+            justify-content: center;
+            flex-wrap: nowrap;
+        }
+
+    }
+  }
