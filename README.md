@@ -41,6 +41,6 @@ I had some difficulty, especially when creating the dropdowns during the project
 ## Author
 
 - Website - [Güney Unay](https://www.guneyunay.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/unaygney)
+- Frontend Mentor - [@unaygney](https://www.frontendmentor.io/profile/unaygney)
 
 
