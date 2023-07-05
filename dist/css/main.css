@@ -99,8 +99,7 @@ nav {
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr;
-  grid-template-areas: 'banner image-box'
- 'footer image-box'; }
+  grid-template-areas: 'banner image-box' 'footer image-box'; }
   .container-grid .banner {
     grid-area: banner;
     display: flex;
@@ -129,12 +128,11 @@ nav {
       border: 0;
       cursor: pointer; }
   .container-grid .image-box {
-    grid-area: image-box;
-    background-image: url(/images/image-hero-desktop.png);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    width: 100%; }
+    grid-area: image-box; }
+    .container-grid .image-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; }
 
 .footer {
   grid-area: footer;
@@ -186,9 +184,7 @@ nav {
     padding: 0;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 1rem;
-    grid-template-areas: 'image-box'
- 'banner'
- 'footer'; }
+    grid-template-areas: 'image-box' 'banner' 'footer'; }
     .container-grid .banner {
       padding: 0;
       margin: 0; }
@@ -197,8 +193,6 @@ nav {
         .container-grid .banner .content h1 {
           font-size: 40px;
           margin-bottom: 1rem; }
-    .container-grid .image-box {
-      background-image: url(/images/image-hero-mobile.png); }
     .container-grid .footer {
       gap: 0;
       justify-content: center;
