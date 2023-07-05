@@ -182,7 +182,7 @@ nav {
   .container-grid {
     grid-template-columns: 1fr;
     padding: 0;
-    margin: 2rem 1rem;
+    margin: 2rem 0rem;
     grid-template-rows: 1fr 1fr 1fr;
     gap: 1rem;
     grid-template-areas: 'image-box'
